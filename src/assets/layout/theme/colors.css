@@ -1,0 +1,37 @@
+:root {
+    /* --primary-color: #af3bbe;
+    --primary-color-text: #ffffff;
+    --secondary-color: #6b7280;
+    --secondary-color-text: #ffffff;
+    --surface-color: #ffffff;
+    --surface-color-text: #000000;
+    --error-color: #dc2626;
+    --error-color-text: #ffffff;
+    --info-color: #3b82f6;
+    --info-color-text: #ffffff;
+    --success-color: #16a34a;
+    --success-color-text: #ffffff;
+    --warning-color: #f59e0b;
+    --warning-color-text: #ffffff;
+    --background-color: #363336;
+    --text-color: #e0d6e0; */
+
+    /* PrimeNG Fuchsia Theme Colors - Primary Color Override*/
+    --p-primary-50: var(--p-pink-50) !important;
+    --p-primary-100: var(--p-pink-100) !important;
+    --p-primary-200: var(--p-pink-200) !important;
+    --p-primary-300: var(--p-pink-300) !important;
+    --p-primary-400: var(--p-pink-400) !important;
+    --p-primary-500: var(--p-pink-500) !important;
+    --p-primary-600: var(--p-pink-600) !important;
+    --p-primary-700: var(--p-pink-700) !important;
+    --p-primary-800: var(--p-pink-800) !important;
+    --p-primary-900: var(--p-pink-900) !important;
+    --p-primary-950: var(--p-pink-950) !important;
+
+
+    /* Custom Colors */
+    --background-color: #1e1e2f;
+    --text-color: #e0d6e0;
+    --card-background-color: #2a2730;
+}

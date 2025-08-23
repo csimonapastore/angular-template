@@ -1,0 +1,30 @@
+<p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+
+    <ng-template #header *ngIf="image">
+        <img alt="Card" class="w-full" [src]="image" />
+    </ng-template>
+
+    <ng-template #titleTemplate *ngIf="title">
+        <app-label styleClass="h3 mb-2 text-2xl font-bold" [text]="title"></app-label>
+    </ng-template>
+
+
+    <ng-template #subtitleTemplate *ngIf="subtitle">
+        <app-label styleClass="p text-muted mb-2 text-2xl font-bold" [text]="subtitle"></app-label>
+    </ng-template>
+
+
+    <app-label *ngIf="text" styleClass="p mb-2 text-2xl font-bold" [text]="text"></app-label>
+
+
+    <ng-content></ng-content>
+
+
+    <ng-template #footer>
+        <div class="flex gap-4 mt-1">
+            <app-button *ngIf="showCloseButton" [label]="closeLabel" [action]="handleCloseAction"></app-button>
+            <app-button *ngIf="showCancelButton" [label]="cancelLabel" [action]="handleCancelAction"></app-button>
+            <app-button *ngIf="showConfirmButton" [label]="confirmLabel" [action]="handleConfirmAction"></app-button>
+        </div>
+    </ng-template>
+</p-card>

@@ -1,0 +1,39 @@
+<div class="login-page">
+    <app-label styleClass="h1 text-3xl font-bold" text="MyAngularApp"></app-label>
+    <div class="login-container mt-4">
+        <p-card [style]="{ width: '28rem', overflow: 'hidden' }">
+            <ng-template #header>
+                <img alt=" Card" class="login-header-image"
+                    src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+            </ng-template>
+
+            <ng-template #title>
+                <app-label class="flex align-items-center justify-content-center"
+                    styleClass="h3 text-3xl font-bold mt-1" text="Accedi"></app-label>
+            </ng-template>
+            <ng-template #subtitle>
+                <app-label class="flex align-items-center justify-content-center" styleClass="p text-muted text-sm mb-1"
+                    text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."></app-label>
+            </ng-template>
+            <div class="login-form mt-2">
+                <app-input-label labelText="Email" labelStyleClass="font-bold" inputType="alphanum"
+                    inputPlaceholder="admin@email.it" inputStyleClass="w-full" inputId="email" [required]="true"
+                    ariaDescribedby="Inserisci la tua email per poter procedere">
+                </app-input-label>
+
+                <app-input-label labelText="Password" labelStyleClass="font-bold" inputType="alphanum"
+                    inputPlaceholder="y0uR-sTr0ng-p4ssWord!" inputStyleClass="w-full" inputId="password"
+                    [required]="true" ariaDescribedby="Inserisci la tua password per poter procedere">
+                </app-input-label>
+
+
+            </div>
+            <ng-template #footer>
+                <div class="flex gap-4 mt-3 p-fluid  justify-content-center w-full">
+                    <app-button label="Login" icon="pi pi-user" styleClass="w-full flex" class="w-full"
+                        (onClick)="onLogin()"></app-button>
+                </div>
+            </ng-template>
+        </p-card>
+    </div>
+</div>

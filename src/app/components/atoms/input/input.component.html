@@ -1,0 +1,5 @@
+<input *ngIf="type !== 'password'" [pKeyFilter]="keyFilter" pInputText [id]="id" [placeholder]="placeholder"
+    [disabled]="disabled" [required]="required" [attr.aria-describedby]="id + '-help'" [class]="styleClass" />
+
+<p-password *ngIf="type === 'password'" [pKeyFilter]="keyFilter" pInputText [id]="id" [placeholder]="placeholder"
+    [disabled]="disabled" [required]="required" [attr.aria-describedby]="id + '-help'" [class]="styleClass" />

@@ -1,0 +1,1 @@
+export type keyfilter = 'int' | 'num' | 'alpha' | 'alphanum';

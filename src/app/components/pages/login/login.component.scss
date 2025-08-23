@@ -1,0 +1,20 @@
+.login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 28rem;
+}
+
+.login-header-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}

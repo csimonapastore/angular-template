@@ -1,0 +1,10 @@
+<ng-container [ngSwitch]="tag">
+    <h1 *ngSwitchCase="'h1'" [class]="styleClass">{{ text }}</h1>
+    <h2 *ngSwitchCase="'h2'" [class]="styleClass">{{ text }}</h2>
+    <h3 *ngSwitchCase="'h3'" [class]="styleClass">{{ text }}</h3>
+    <h4 *ngSwitchCase="'h4'" [class]="styleClass">{{ text }}</h4>
+    <h5 *ngSwitchCase="'h5'" [class]="styleClass">{{ text }}</h5>
+    <h6 *ngSwitchCase="'h6'" [class]="styleClass">{{ text }}</h6>
+    <p *ngSwitchCase="'p'" [class]="styleClass">{{ text }}</p>
+    <span *ngSwitchDefault [class]="styleClass">{{ text }}</span>
+</ng-container>
