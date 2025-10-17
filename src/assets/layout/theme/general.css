@@ -6,3 +6,11 @@
     --p-border-radius-lg: 3px !important;
     --p-border-radius-xl: 3px !important;
 }
+
+.p-password {
+    display: contents !important;
+}
+
+.p-password.w-full .p-password-input {
+    width: 100%;
+}

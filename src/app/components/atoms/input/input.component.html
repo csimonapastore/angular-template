@@ -1,5 +1,24 @@
-<input *ngIf="type !== 'password'" [pKeyFilter]="keyFilter" pInputText [id]="id" [placeholder]="placeholder"
-    [disabled]="disabled" [required]="required" [attr.aria-describedby]="id + '-help'" [class]="styleClass" />
+<div [ngSwitch]="type">
+    <input *ngSwitchCase="'text'"
+        pInputText
+        [id]="id" 
+        [placeholder]="placeholder"
+        [disabled]="disabled" 
+        [required]="required" 
+        [attr.aria-describedby]="id + '-help'" 
+        [class]="styleClass"
+        [ngModel]="value"
+        (ngModelChange)="onInputChange($event)"
+        [pKeyFilter]="keyFilter" />
 
-<p-password *ngIf="type === 'password'" [pKeyFilter]="keyFilter" pInputText [id]="id" [placeholder]="placeholder"
-    [disabled]="disabled" [required]="required" [attr.aria-describedby]="id + '-help'" [class]="styleClass" />
+    <p-password *ngSwitchCase="'password'"
+        [feedback]="false"
+        [toggleMask]="true"
+        [inputId]="id"
+        [placeholder]="placeholder"
+        [disabled]="disabled"
+        [required]="required"
+        [inputStyleClass]="styleClass"
+        [ngModel]="value"
+        (ngModelChange)="onInputChange($event)" />
+</div>

@@ -1,1 +1,1 @@
-export type keyfilter = 'int' | 'num' | 'alpha' | 'alphanum';
+export type keyfilter = 'int' | 'num' | 'alpha' | 'alphanum' | 'blockSpace' ;

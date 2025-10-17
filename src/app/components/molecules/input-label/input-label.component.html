@@ -1,6 +1,14 @@
 <div class="flex flex-column gap-2 mt-2">
     <app-label *ngIf="labelText" [styleClass]="labelStyleClass" [text]="labelText"></app-label>
-    <app-input [id]="inputId" [type]="inputType" [placeholder]="inputPlaceholder" [styleClass]="inputStyleClass"
-        [required]="required"></app-input>
+    <app-input 
+        [id]="inputId" 
+        [type]="inputType" 
+        [keyFilter]="inputKeyFilter" 
+        [placeholder]="inputPlaceholder" 
+        [styleClass]="inputStyleClass"
+        [required]="required"
+        [disabled]="disabled"
+        [(value)]="value"
+        (valueChange)="onValueChange($event)"></app-input>
     <small [id]="inputId + '-help'">{{ariaDescribedby}}</small>
 </div>

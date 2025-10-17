@@ -16,14 +16,16 @@
                     text="Lorem ipsum dolor sit amet, consectetur adipisicing elit."></app-label>
             </ng-template>
             <div class="login-form mt-2">
-                <app-input-label labelText="Email" labelStyleClass="font-bold" inputType="alphanum"
+                <app-input-label labelText="Email" labelStyleClass="font-bold" inputKeyFilter="blockSpace"
                     inputPlaceholder="admin@email.it" inputStyleClass="w-full" inputId="email" [required]="true"
+                    [(value)]="authenticationData.email"
                     ariaDescribedby="Inserisci la tua email per poter procedere">
                 </app-input-label>
 
-                <app-input-label labelText="Password" labelStyleClass="font-bold" inputType="alphanum"
+                <app-input-label labelText="Password" labelStyleClass="font-bold" inputType="password"
                     inputPlaceholder="y0uR-sTr0ng-p4ssWord!" inputStyleClass="w-full" inputId="password"
-                    [required]="true" ariaDescribedby="Inserisci la tua password per poter procedere">
+                    [(value)]="authenticationData.password" [required]="true" 
+                    ariaDescribedby="Inserisci la tua password per poter procedere">
                 </app-input-label>
 
 
@@ -31,7 +33,7 @@
             <ng-template #footer>
                 <div class="flex gap-4 mt-3 p-fluid  justify-content-center w-full">
                     <app-button label="Login" icon="pi pi-user" styleClass="w-full flex" class="w-full"
-                        (onClick)="onLogin()"></app-button>
+                        [action]="onLogin"></app-button>
                 </div>
             </ng-template>
         </p-card>

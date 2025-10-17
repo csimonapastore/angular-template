@@ -12,14 +12,14 @@ export class ButtonComponent {
   @Input() icon: string = '';
   @Input() disabled: boolean = false;
   @Input() styleClass: string = '';
-  @Input() action?: () => void;
+  @Input() action?: () => unknown | void;
 
-  @Output() actionTriggered = new EventEmitter<void>();
+  @Output() onClick = new EventEmitter<void>();
 
   handleClick() {
     if (this.action) {
       this.action();
-      this.actionTriggered.emit();
     }
+    this.onClick.emit();
   }
 }
