@@ -26,7 +26,6 @@ export class InputComponent {
   @Output() valueChange = new EventEmitter<string>();
 
   onInputChange(event: any) {
-    console.log(event)
     let value = '' 
     switch(typeof event) {
       case 'string':

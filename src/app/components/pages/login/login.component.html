@@ -18,13 +18,13 @@
             <div class="login-form mt-2">
                 <app-input-label labelText="Email" labelStyleClass="font-bold" inputKeyFilter="blockSpace"
                     inputPlaceholder="admin@email.it" inputStyleClass="w-full" inputId="email" [required]="true"
-                    [(value)]="authenticationData.email"
+                    [(value)]="authenticationForm.email"
                     ariaDescribedby="Inserisci la tua email per poter procedere">
                 </app-input-label>
 
                 <app-input-label labelText="Password" labelStyleClass="font-bold" inputType="password"
                     inputPlaceholder="y0uR-sTr0ng-p4ssWord!" inputStyleClass="w-full" inputId="password"
-                    [(value)]="authenticationData.password" [required]="true" 
+                    [(value)]="authenticationForm.password" [required]="true" 
                     ariaDescribedby="Inserisci la tua password per poter procedere">
                 </app-input-label>
 

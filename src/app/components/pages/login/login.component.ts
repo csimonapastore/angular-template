@@ -8,11 +8,10 @@ import { LabelComponent } from '../../atoms/label/label.component';
 import { InputLabelComponent } from '../../molecules/input-label/input-label.component';
 import { AuthService } from '../../../services/auth.service';
 import { Subscription } from 'rxjs';
+import { AuthenticationData, AuthenticationDataRequest } from '../../../models/request/authentication-data';
+import { AuthenticationForm } from '../../../models/common/authentication-form';
 
-interface AuthenticationData {
-  email: string;
-  password: string;
-}
+
 
 @Component({
   selector: 'app-login',
@@ -38,6 +37,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     password: ''
   };
 
+  public authenticationForm: AuthenticationForm = {
+    email: '',
+    password: ''
+  };
+
   ngOnInit() {
     // Se l'utente è già autenticato, lo reindirizziamo alla home
     this.authService.authenticate().subscribe(isAuth => {
@@ -53,8 +57,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   // Binding della funzione nel costruttore per mantenere il contesto
   public onLogin = () => {
-    console.log('LoginComponent - onLogin:', this.authenticationData);
-    if (!this.authenticationData.email || !this.authenticationData.password) {
+    if (!this.authenticationForm.email || !this.authenticationForm.password) {
       this.messageService.add({
         severity: 'error',
         summary: 'Error',
@@ -64,7 +67,13 @@ export class LoginComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.authService.authenticate(this.authenticationData).subscribe({
+    this.authenticationData.email = this.authenticationForm.email;
+    this.authenticationData.password = this.authenticationForm.password;
+    const request = {
+      data : this.authenticationData
+    } as AuthenticationDataRequest;
+
+    this.authService.authenticate(request).subscribe({
       next: (success) => {
         if (success) {
           this.messageService.add({
